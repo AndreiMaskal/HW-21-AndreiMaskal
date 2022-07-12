@@ -12,7 +12,6 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pr2503" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -35,7 +34,7 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qgs-Fx-Mev">
                                 <rect key="frame" x="65" y="331" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,12 +63,23 @@
                                     <action selector="onBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ard-2t-pZc"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3fZ-Gl-oTU">
+                                <rect key="frame" x="298" y="376.5" width="51" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="eye" catalog="system" title="" subtitle=" ">
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="eye:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1fM-N8-bOW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qgs-Fx-Mev" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="287" id="1cn-aF-0Ve"/>
                             <constraint firstItem="3g4-cd-RKK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="3AP-sc-2kd"/>
+                            <constraint firstItem="3fZ-Gl-oTU" firstAttribute="top" secondItem="wXn-iR-iko" secondAttribute="top" id="5HD-KQ-Mq3"/>
                             <constraint firstItem="83o-Pr-D2N" firstAttribute="leading" secondItem="3g4-cd-RKK" secondAttribute="trailing" constant="15" id="Ccy-vd-UKP"/>
                             <constraint firstItem="rDf-m1-gqV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="I0Z-2u-Sbm"/>
                             <constraint firstItem="Qgs-Fx-Mev" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="OEo-KH-YOd"/>
@@ -82,6 +92,8 @@
                             <constraint firstItem="wXn-iR-iko" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="hTh-qx-7Q1"/>
                             <constraint firstItem="Rp5-dw-WUG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="287" id="lgS-mc-7Nm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rDf-m1-gqV" secondAttribute="trailing" constant="141" id="odL-CM-2mP"/>
+                            <constraint firstItem="3fZ-Gl-oTU" firstAttribute="bottom" secondItem="wXn-iR-iko" secondAttribute="bottom" id="tfB-dp-dBd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3fZ-Gl-oTU" secondAttribute="trailing" constant="65" id="zQW-I9-MEc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -93,16 +105,21 @@
                         <outlet property="textField" destination="wXn-iR-iko" id="Fc0-YY-31K"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="96.428571428571431"/>
         </scene>
     </scenes>
     <resources>
+        <image name="eye" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
