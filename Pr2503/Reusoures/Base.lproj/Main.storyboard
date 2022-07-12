@@ -44,7 +44,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDf-m1-gqV">
                                 <rect key="frame" x="141" y="548.5" width="132" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="cancel">
+                                <buttonConfiguration key="configuration" style="plain" title="clear">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </backgroundConfiguration>
@@ -73,6 +73,14 @@
                                     <action selector="eye:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1fM-N8-bOW"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HnC-Cq-Nzn">
+                                <rect key="frame" x="154" y="684" width="106" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -101,6 +109,7 @@
                         <outlet property="cancelButton" destination="rDf-m1-gqV" id="77R-G3-4l5"/>
                         <outlet property="generateButton" destination="83o-Pr-D2N" id="RTW-AL-vMO"/>
                         <outlet property="label" destination="Qgs-Fx-Mev" id="uso-mj-yOW"/>
+                        <outlet property="passwordLabel" destination="HnC-Cq-Nzn" id="ajz-i1-U3j"/>
                         <outlet property="searchButton" destination="3g4-cd-RKK" id="tkc-Et-HR5"/>
                         <outlet property="textField" destination="wXn-iR-iko" id="Fc0-YY-31K"/>
                     </connections>
