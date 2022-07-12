@@ -10,11 +10,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var activiti: UIActivityIndicatorView!
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var passwordLabel: UILabel!
+    
     
     @IBAction func cancelBut(_ sender: Any) {
         label.text = ""
         textField.text = ""
         activiti.stopAnimating()
+        passwordLabel.text = ""
     }
     
     @IBAction func eye(_ sender: Any) {
@@ -25,7 +28,7 @@ class ViewController: UIViewController {
         activiti.startAnimating()
         label.text = "Wait"
         bruteForce(passwordToUnlock: textField.text ?? "", completion: { [weak self] password in
-            self?.label.text = password
+            self?.label.text = "Password found"
             self?.activiti.stopAnimating()
             self?.textField.isSecureTextEntry = false
         })
@@ -44,6 +47,10 @@ class ViewController: UIViewController {
         activiti.hidesWhenStopped = true
     }
     
+    func shouPassword(password: String) {
+        passwordLabel.text = password
+    }
+    
     func bruteForce(passwordToUnlock: String, completion: @escaping (String) -> Void) {
         
         let queue = DispatchQueue(label: "OneQueue")
@@ -56,6 +63,10 @@ class ViewController: UIViewController {
             while password != passwordToUnlock {
                 
                 password = generateBruteForce(password, fromArray: allowedCharacters)
+                
+                DispatchQueue.main.async {
+                    self.shouPassword(password: password)
+                }
             }
             
             DispatchQueue.main.async {
