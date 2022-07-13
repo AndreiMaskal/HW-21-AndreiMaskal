@@ -105,12 +105,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activiti" destination="Rp5-dw-WUG" id="7b0-cG-0vN"/>
                         <outlet property="cancelButton" destination="rDf-m1-gqV" id="77R-G3-4l5"/>
                         <outlet property="generateButton" destination="83o-Pr-D2N" id="RTW-AL-vMO"/>
                         <outlet property="label" destination="Qgs-Fx-Mev" id="uso-mj-yOW"/>
                         <outlet property="passwordLabel" destination="HnC-Cq-Nzn" id="ajz-i1-U3j"/>
                         <outlet property="searchButton" destination="3g4-cd-RKK" id="tkc-Et-HR5"/>
+                        <outlet property="spiner" destination="Rp5-dw-WUG" id="7b0-cG-0vN"/>
                         <outlet property="textField" destination="wXn-iR-iko" id="Fc0-YY-31K"/>
                     </connections>
                 </viewController>
