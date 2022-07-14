@@ -13,6 +13,24 @@ class ViewController: UIViewController  {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var passwordLabel: UILabel!
     
+    @IBOutlet weak var button: UIButton!
+    
+        var isBlack: Bool = false {
+            didSet {
+                if isBlack {
+                    self.view.backgroundColor = .black
+                    self.label.textColor = .white
+                } else {
+                    self.view.backgroundColor = .white
+                    self.label.textColor = .black
+                }
+            }
+        }
+    
+    @IBAction func taptedButton(_ sender: Any) {
+        isBlack.toggle()
+    }
+    
     @IBAction func cancelBut(_ sender: Any) {
         label.text = ""
         textField.text = ""
