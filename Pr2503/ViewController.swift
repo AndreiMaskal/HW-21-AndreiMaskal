@@ -25,7 +25,6 @@ class ViewController: UIViewController {
             }
         }
     
-    
     @IBAction func taptedButton(_ sender: Any) {
         isBlack.toggle()
     }
