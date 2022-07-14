@@ -4,7 +4,6 @@ class ViewController: UIViewController  {
     
     let lenghtPassword = 3
 
- 
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -43,9 +42,11 @@ class ViewController: UIViewController  {
     }
 
     @IBAction func searchBut(_ sender: Any) {
+        cancelButton.isHidden = true
         spiner.startAnimating()
         label.text = "Wait"
         bruteForce(passwordToUnlock: textField.text ?? "", completion: { [weak self] password in
+            self?.cancelButton.isHidden = false
             self?.label.text = "Password found"
             self?.spiner.stopAnimating()
             self?.textField.isSecureTextEntry = false
@@ -115,8 +116,3 @@ class ViewController: UIViewController  {
     }
 }
 
-//extension ViewController: OperationQueue {
-//
-////    override func main() {
-////        bruteForce(passwordToUnlock: <#String#>, completion: <#(String) -> Void#>)
-//}
