@@ -1,8 +1,9 @@
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController  {
     
     let lenghtPassword = 3
+
  
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var label: UILabel!
@@ -95,3 +96,9 @@ class ViewController: UIViewController {
         return count <= 3
     }
 }
+
+//extension ViewController: OperationQueue {
+//
+////    override func main() {
+////        bruteForce(passwordToUnlock: <#String#>, completion: <#(String) -> Void#>)
+//}
