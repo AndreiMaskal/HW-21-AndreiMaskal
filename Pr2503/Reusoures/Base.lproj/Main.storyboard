@@ -51,7 +51,7 @@
                                     <color key="baseForegroundColor" systemColor="systemPinkColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="cancelBut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="byI-bH-U05"/>
+                                    <action selector="clearTextField:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FXG-yE-lab"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83o-Pr-D2N">
@@ -89,7 +89,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="change background"/>
                                 <connections>
-                                    <action selector="taptedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AMV-Gk-Ks7"/>
+                                    <action selector="changeBackground:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J8b-OV-znu"/>
                                 </connections>
                             </button>
                         </subviews>

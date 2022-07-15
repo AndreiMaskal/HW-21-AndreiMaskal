@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController  {
     
     let lenghtPassword = 3
-
+    
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
@@ -11,36 +11,31 @@ class ViewController: UIViewController  {
     @IBOutlet weak var generateButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var passwordLabel: UILabel!
-    
     @IBOutlet weak var button: UIButton!
     
-        var isBlack: Bool = false {
-            didSet {
-                if isBlack {
-                    self.view.backgroundColor = .black
-                    self.label.textColor = .white
-                } else {
-                    self.view.backgroundColor = .white
-                    self.label.textColor = .black
-                }
-            }
+    var isBlack: Bool = false {
+        didSet {
+            view.backgroundColor = isBlack ? .black : .white
+            label.textColor = isBlack ? .white : .black
         }
+    }
     
-    @IBAction func taptedButton(_ sender: Any) {
+    @IBAction func changeBackground(_ sender: Any) {
         isBlack.toggle()
     }
     
-    @IBAction func cancelBut(_ sender: Any) {
+    @IBAction func clearTextField(_ sender: Any) {
+        
         label.text = ""
         textField.text = ""
         spiner.stopAnimating()
         passwordLabel.text = ""
     }
     
-    @IBAction func eye(_ sender: Any) {
+    @IBAction func showEye(_ sender: Any) {
         textField.isSecureTextEntry.toggle()
     }
-
+    
     @IBAction func searchBut(_ sender: Any) {
         cancelButton.isHidden = true
         spiner.startAnimating()
@@ -50,7 +45,7 @@ class ViewController: UIViewController  {
             self?.label.text = "Password found"
             self?.spiner.stopAnimating()
             self?.textField.isSecureTextEntry = false
-     
+            
         })
     }
     
@@ -80,36 +75,34 @@ class ViewController: UIViewController  {
     func bruteForce(passwordToUnlock: String, completion: @escaping (String) -> Void) {
         
         let queue = DispatchQueue(label: "OneQueue")
-     
+        
         queue.async {
-           
+            
             let allowedCharacters: [String] = String().printable.map { String($0) }
             var password: String = ""
-            
+    
             while password != passwordToUnlock {
-                
                 password = generateBruteForce(password, fromArray: allowedCharacters)
-                
                 DispatchQueue.main.async {
                     self.shouPassword(password: password)
                 }
             }
-            
             DispatchQueue.main.async {
                 completion(password)
-               
+                
             }
         }
     }
 }
 
-    extension ViewController: UITextFieldDelegate {
-
+extension ViewController: UITextFieldDelegate {
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let textFieldText = textField.text,
               let rangeOfTextToReplace = Range(range, in: textFieldText) else {
-        return false
-    }
+            return false
+        }
+        
         let subsStringToReplace = textFieldText[rangeOfTextToReplace]
         let count = textFieldText.count - subsStringToReplace.count + string.count
         return count <= 3
